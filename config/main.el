@@ -1,5 +1,8 @@
 ;; _____________________________________________________________________________
-;;                                                        Default user variables
+;;                                                                Main variables
+
+;; ________________________________________________________________________
+;;                                                   Default user variables
 
 ;; Set user name
 (unless (boundp 'user-full-name)
@@ -19,6 +22,15 @@
 ;; Set verbose mode
 (unless (boundp 'user-verbose)
   (setq user-verbose nil)
+)
+
+;; ________________________________________________________________________
+;;                                                            Path settings
+
+(setq user-config-base-path (concat emacs-config-path "config/")
+;      user-ui-config-path (concat emacs-config-base-path "ui/")
+;      user-coding-config-path (concat emacs-config-base-path "coding/")
+;      user-organizer-config-path (concat emacs-config-base-path "organizer/")
 )
 
 (load (concat emacs-config-path "config/install.el"))
