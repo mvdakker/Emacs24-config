@@ -21,4 +21,7 @@
   (setq user-verbose nil)
 )
 
+;; _____________________________________________________________________________
+;;                                                          Package installation
+
 (load (concat emacs-config-path "config/install.el"))
