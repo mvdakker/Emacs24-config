@@ -2,7 +2,8 @@
 ;; Package enabler
 
 (setq use-ido t
-      use-hippie-expand t)
+      use-hippie-expand t
+      use-magit t)
 
 ;; _____________________________________________________________________________
 ;;                                                              Package settings

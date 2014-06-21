@@ -27,6 +27,19 @@
 (load (concat emacs-config-path "config/install.el"))
 
 ;; _____________________________________________________________________________
-;;                                                              General settings
+;;                                                                 User settings
 
-(load (concat emacs-config-path "config/general.el"))
+(setq user-settings-path (concat emacs-config-path "config/")
+      user-general-settings-path user-settings-path 
+      user-coding-settings-path (concat user-settings-path "coding/")
+)
+
+;; ________________________________________________________________________
+;;                                                         General settings
+
+(load (concat user-general-settings-path "general.el"))
+
+;; ________________________________________________________________________
+;;                                                          Coding settings
+
+(load (concat user-coding-settings-path "coding.el"))
