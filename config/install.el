@@ -1,8 +1,14 @@
 ;; _____________________________________________________________________________
+;; Package enabler
+
+(setq use-ido t)
+
+;; _____________________________________________________________________________
 ;;                                                              Package settings
 
 ;; List of the packages to install
-(setq required-package-list `(magit))
+(setq required-package-list `(ido
+			      magit))
 
 ;; List of package repositories
 (setq package-archives `(("elpa" . "http://elpa.gnu.org/packages/")

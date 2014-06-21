@@ -25,3 +25,8 @@
 ;;                                                          Package installation
 
 (load (concat emacs-config-path "config/install.el"))
+
+;; _____________________________________________________________________________
+;;                                                              General settings
+
+(load (concat emacs-config-path "config/general.el"))
