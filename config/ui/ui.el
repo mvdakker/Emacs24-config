@@ -25,3 +25,15 @@
       display-time-day-and-date
 )
 (display-time-mode t)
+
+;; _____________________________________________________________________________
+;;                                                                   Color theme
+
+(when use-color-theme
+  (require 'color-theme)
+
+  (when use-solarized-theme
+    (require 'color-theme-solarized)
+    (load-theme 'solarized-dark t)
+  )
+)

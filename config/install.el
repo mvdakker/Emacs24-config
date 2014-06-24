@@ -1,15 +1,19 @@
 ;; _____________________________________________________________________________
 ;; Package enabler
 
-(setq use-ido t
+(setq use-color-theme t
+      use-ido t
       use-hippie-expand t
-      use-magit t)
+      use-magit t
+      use-solarized-theme t)
 
 ;; _____________________________________________________________________________
 ;;                                                              Package settings
 
 ;; List of the packages to install
-(setq required-package-list `(ido
+(setq required-package-list `(color-theme
+			      color-theme-solarized
+			      ido
 			      magit))
 
 ;; List of package repositories
