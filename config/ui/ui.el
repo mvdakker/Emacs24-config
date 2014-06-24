@@ -26,6 +26,14 @@
 )
 (display-time-mode t)
 
+;; _________________________________________________________________________
+;;                                                                 Powerline
+
+(when use-powerline
+  (require 'powerline)
+  (powerline-center-theme)
+)
+
 ;; _____________________________________________________________________________
 ;;                                                                   Color theme
 
