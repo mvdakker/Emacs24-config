@@ -30,8 +30,9 @@
 ;;                                                                 User settings
 
 (setq user-settings-path (concat emacs-config-path "config/")
-      user-general-settings-path user-settings-path 
+      user-general-settings-path user-settings-path
       user-coding-settings-path (concat user-settings-path "coding/")
+      user-ui-settings-path (concat user-settings-path "ui/")
 )
 
 ;; ________________________________________________________________________
@@ -43,3 +44,8 @@
 ;;                                                          Coding settings
 
 (load (concat user-coding-settings-path "coding.el"))
+
+;; ________________________________________________________________________
+;;                                                              UI settings
+
+(load (concat user-ui-settings-path "ui.el"))

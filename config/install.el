@@ -1,16 +1,23 @@
 ;; _____________________________________________________________________________
 ;; Package enabler
 
-(setq use-ido t
+(setq use-color-theme t
+      use-ido t
       use-hippie-expand t
-      use-magit t)
+      use-magit t
+      use-powerline nil
+      use-solarized-theme t)
 
 ;; _____________________________________________________________________________
 ;;                                                              Package settings
 
 ;; List of the packages to install
-(setq required-package-list `(ido
-			      magit))
+(setq required-package-list `(cl
+			      color-theme
+			      color-theme-solarized
+			      ido
+			      magit
+			      powerline))
 
 ;; List of package repositories
 (setq package-archives `(("elpa" . "http://elpa.gnu.org/packages/")
