@@ -1,5 +1,9 @@
 (message "Processing general configuration...")
 
+
+;; Strip trailing whitespace before saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; _____________________________________________________________________________
 ;;                                                                           Ido
 
@@ -38,12 +42,31 @@
 
 (when use-hippie-expand
   (setq hippie-expand-try-functions-list '(try-expand-dabbrev
-					   try-expand-dabbrev-all-buffers
-					   try-complete-file-name-partially
-					   try-complete-file-name
-					   try-expand-line
-					   try-complete-lisp-symbol-partially
-					   try-complete-lisp-symbol))
+                                           try-expand-dabbrev-all-buffers
+                                           try-complete-file-name-partially
+                                           try-complete-file-name
+                                           try-expand-line
+                                           try-complete-lisp-symbol-partially
+                                           try-complete-lisp-symbol))
 
   (global-set-key (kbd "C-/") 'hippie-expand)
+)
+
+
+;; _____________________________________________________________________________
+;;                                                                    Whitespace
+
+(setq whitespace-style (quote (face
+                               tabs
+                               ; spaces
+                               trailing
+                               space-before-tab
+                               ; newline
+                               indentation
+                               ; empty space-after-tab
+                               space-mark
+                               tab-mark
+                               lines-tail
+                               newline-mark
+                               ))
 )
