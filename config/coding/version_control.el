@@ -1,3 +1,5 @@
+(message "Processing version control configuration...")
+
 ;; _____________________________________________________________________________
 ;;                                                                         Magit
 
@@ -21,7 +23,7 @@
 
   ;; ______________________________________________________________________
   ;;                                                           Key bindings
-    
+
   (global-set-key [(f8)] 'magit-status)   ;; Display magit status
   (global-set-key [(C-f8)] 'magit-log)    ;; Display magit log
 

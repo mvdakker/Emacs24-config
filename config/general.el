@@ -1,3 +1,5 @@
+(message "Processing general configuration...")
+
 ;; _____________________________________________________________________________
 ;;                                                                           Ido
 
@@ -42,6 +44,6 @@
 					   try-expand-line
 					   try-complete-lisp-symbol-partially
 					   try-complete-lisp-symbol))
-  
+
   (global-set-key (kbd "C-/") 'hippie-expand)
 )
