@@ -1,4 +1,4 @@
-
+(message "Processing emacs-lisp configuration...")
 
 ;; _____________________________________________________________________________
 ;;                                                                   Indentation
