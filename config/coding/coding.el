@@ -52,6 +52,17 @@
   (sort-regexp-fields reverse "\\w+" "\\&" beg end))
 
 ;; _____________________________________________________________________________
+;;                                                                Line numbering
+
+(when use-line-numbering
+  (require 'linum)
+
+  (column-number-mode 1)
+
+  (global-set-key (kbd "C-c n") 'linum-mode)
+)
+
+;; _____________________________________________________________________________
 ;;                                                                     Languages
 
 (load (concat user-coding-settings-path "lang-emacs-lisp.el"))

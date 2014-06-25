@@ -4,6 +4,7 @@
 (setq use-color-theme t
       use-ido t
       use-hippie-expand t
+      use-line-numbering t
       use-magit t
       use-powerline nil
       use-solarized-theme t)
@@ -16,6 +17,7 @@
 			      color-theme
 			      color-theme-solarized
 			      ido
+			      linum
 			      magit
 			      powerline))
 
