@@ -45,3 +45,11 @@
 (add-hook 'find-file-hook 'try-smerge t)
 
 (setq smerge-command-prefix (kbd "C-c m"))
+
+;; ________________________________________________________________________
+;;                                                                    Ediff
+
+(setq ediff-split-window-function 'split-window-horizontally
+      ediff-merge-split-window-function 'split-window-vertically
+      ediff-use-long-help-message t
+)
