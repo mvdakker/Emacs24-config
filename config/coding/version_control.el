@@ -53,3 +53,26 @@
       ediff-merge-split-window-function 'split-window-vertically
       ediff-use-long-help-message t
 )
+
+
+;; _____________________________________________________________________________
+;;                                                                 Miscellaneous
+
+;; ________________________________________________________________________
+;;                                                           Duplicate line
+
+(defun duplicate-line (&optional commentfirst)
+  "Comment line at point; if COMMENTFIRST is non-nil, comment the original"
+  (interactive)
+  (beginning-of-line)
+  (push-mark)
+  (end-of-line)
+  (let ((str (buffer-substring (region-beginning) (region-end))))
+    (when commentfirst
+    (comment-region (region-beginning) (region-end)))
+    (insert-string
+      (concat (if (= 0 (forward-line 1)) "" "\n") str "\n"))
+    (forward-line -1)))
+
+(global-set-key (kbd "C-c y") 'duplicate-line)
+(global-set-key (kbd "C-c c") (lambda() (interactive) (duplicate-line t)))
