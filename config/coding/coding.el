@@ -13,3 +13,8 @@
 
 (global-set-key (kbd "C-M-[")   'backward-sexp)
 (global-set-key (kbd "C-M-]")   'forward-sexp)
+
+;; _____________________________________________________________________________
+;;                                                                     Languages
+
+(load (concat user-coding-settings-path "lang-emacs-lisp.el"))
