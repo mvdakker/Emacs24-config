@@ -45,5 +45,8 @@
   (when use-solarized-theme
     (require 'color-theme-solarized)
     (load-theme 'solarized-dark t)
+
+    (global-set-key [(f5)] 'color-theme-solarized-dark)
+    (global-set-key [(S-f5)] 'color-theme-solarized-light)
   )
 )
