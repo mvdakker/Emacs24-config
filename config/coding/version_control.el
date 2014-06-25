@@ -32,3 +32,16 @@
   (global-set-key (kbd "C-x g b") 'magit-blame-mode)
 
 )
+
+;; ________________________________________________________________________
+;;                                                                  Merging
+
+(defun try-smerge ()
+  (save-excursion
+    (goto-char (point-min))
+    (when (re-search-forward "^<<<<<<< " nil t)
+      (smerge-mode 1))))
+
+(add-hook 'find-file-hook 'try-smerge t)
+
+(setq smerge-command-prefix (kbd "C-c m"))
