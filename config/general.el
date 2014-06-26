@@ -69,3 +69,60 @@
                                newline-mark
                                ))
 )
+
+;; _____________________________________________________________________________
+;;                                                                        Buffer
+
+;; _________________________________________________________________________
+;;                                                                   IBuffer
+
+(when use-ibuffer
+  (require 'ibuffer)
+  (require 'ibuffer-git)
+
+  (setq ibuffer-saved-filter-groups
+      (quote (("default"
+	       ("Programming"
+		(or (mode . c-mode)
+                    (mode . cc-mode)
+                    (mode . c++-mode)
+                    (mode . cuda-mode)
+                    (mode . cmake-mode)
+                    (mode . perl-mode)
+                    (mode . python-mode)
+                    (mode . enaml-mode)))
+	       ("Emacs"
+		(mode . emacs-lisp-mode))
+	       ("Dired"
+		(mode . dired-mode))
+	       ))))
+
+  (add-hook 'ibuffer-mode-hook
+            (lambda () (ibuffer-switch-to-saved-filter-groups "default")))
+
+  (setq ibuffer-auto-mode 1
+        ibuffer-show-empty-filter-groups nil
+        ibuffer-shrink-to-minimum-size t
+        ibuffer-always-show-last-buffer nil
+        ibuffer-sorting-mode 'recency
+        ibuffer-use-header-line nil)
+
+  (global-set-key [(f12)] 'ibuffer)
+)
+
+;; ________________________________________________________________________
+;; Miscellaneous
+
+;; Make large files read only
+(setq max-writable-file-size (* 1024 1024))
+
+(defun make-large-files-read-only ()
+  "If a file is over a given size, make the buffer read only."
+  (when (> (buffer-size) max-writable-file-size)
+    (setq buffer-read-only t)
+    (buffer-disable-undo)
+    ;;(fundamental-mode)
+    (message "Buffer is set to read-only because it is large.  Undo also disabled.")
+    ))
+
+(add-hook 'find-file-hooks 'make-large-files-read-only)
