@@ -66,3 +66,5 @@
 ;;                                                                     Languages
 
 (load (concat user-coding-settings-path "lang-emacs-lisp.el"))
+
+(load (concat user-coding-settings-path "lang-python.el"))
