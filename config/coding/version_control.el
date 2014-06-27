@@ -11,11 +11,11 @@
   ;; ______________________________________________________________________
   ;;                                                               Settings
 
-  (setq	magit-log-auto-more t
-	magit-process-popup-time 2
-	magit-sha1-abbrev-length 8
-	magit-diff-refine-hunk (quote all)
-	)
+  (setq magit-log-auto-more t
+        magit-process-popup-time 2
+        magit-sha1-abbrev-length 8
+        magit-diff-refine-hunk (quote all)
+        )
 
   (when use-ido
     (setq magit-completing-read-function (quote magit-ido-completing-read))
