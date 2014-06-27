@@ -15,18 +15,18 @@
 
 ;; List of the packages to install
 (setq required-package-list `(cl
-			      color-theme
-			      color-theme-solarized
+                              color-theme
+                              color-theme-solarized
                               ibuffer
                               ibuffer-git
                               ido
-			      linum
-			      magit
-			      powerline))
+                              linum
+                              magit
+                              powerline))
 
 ;; List of package repositories
 (setq package-archives `(("elpa" . "http://elpa.gnu.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; _____________________________________________________________________________
 ;;                                                              Install packages
