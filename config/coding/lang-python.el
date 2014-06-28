@@ -45,4 +45,12 @@
           new-buffer-name (concat (file-name-nondirectory (buffer-file-name)) " [" parent-dir "]" ))
     (rename-buffer new-buffer-name t)))
 
-(add-hook 'python-mode-hook (function python_init-rename-buffer))
+(add-hook 'python-mode-hook (function python-rename-buffer))
+
+;; _____________________________________________________________________________
+;;                                                                          Jedi
+
+(when use-jedi
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+)
