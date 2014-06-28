@@ -52,5 +52,6 @@
 
 (when use-jedi
   (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t)
-)
+  (setq jedi:setup-keys t
+        jedi:complete-on-dot t
+        jedi:tooltip-method '(pos-tip popup)))
