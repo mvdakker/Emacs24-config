@@ -15,6 +15,7 @@
                              "^\*Back"
                              "^\*Completion"
                              "^\*Ido")
+        ido-everywhere t
         ido-case-fold t ; be case insensitive
         ido-enable-last-directory-history t ; remember last used dirs
         ido-max-directory-size 30000        ;
