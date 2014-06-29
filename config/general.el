@@ -5,6 +5,14 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; _____________________________________________________________________________
+;;                                                                  Input method
+
+(setq default-input-method "latin-9-prefix"
+      input-method-verbose-flag t
+      input-method-highlight-flag t
+)
+
+;; _____________________________________________________________________________
 ;;                                                                           Ido
 
 (when use-ido
@@ -15,6 +23,7 @@
                              "^\*Back"
                              "^\*Completion"
                              "^\*Ido")
+        ido-everywhere t
         ido-case-fold t ; be case insensitive
         ido-enable-last-directory-history t ; remember last used dirs
         ido-max-directory-size 30000        ;
