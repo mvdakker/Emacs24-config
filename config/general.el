@@ -5,6 +5,14 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; _____________________________________________________________________________
+;;                                                                  Input method
+
+(setq default-input-method "latin-9-prefix"
+      input-method-verbose-flag t
+      input-method-highlight-flag t
+)
+
+;; _____________________________________________________________________________
 ;;                                                                           Ido
 
 (when use-ido
