@@ -63,6 +63,35 @@
 )
 
 ;; _____________________________________________________________________________
+;;                                                                 Auto complete
+
+(when use-auto-complete
+  (require 'auto-complete)
+  (ac-config-default)
+
+  (setq ac-ignore-case t                ; Ignore case sensitivity
+        ac-delay 0.25                   ; Delay time (s) before completion is shown
+        ac-auto-start nil               ; Never automatically start
+        ac-auto-show-menu               ; Delay time (s) before completion menu is shown
+        ac-quick-help-delay             ; Delay time (s) before help is shown
+        ac-dwim t                       ; Do What I Mean
+        )
+
+  ;; Toggle auto-complete
+  (defun user:ac-auto-start-toggle ()
+    "Toggle auto start of auto completion"
+    (interactive)
+    (setq ac-auto-start (if ac-auto-start nil 3))
+    (if ac-auto-start (message "ac-auto-start enabled")
+      (message "ac-auto-start disabled")))
+
+  ;; Key bindings
+  (global-set-key (kbd "M-/") 'ac-start)
+  (define-key ac-complete-mode-map (kbd "M-/") 'ac-stop)
+  (global-set-key (kbd "C-c /") 'user:ac-auto-start-toggle)
+)
+
+;; _____________________________________________________________________________
 ;;                                                                     Languages
 
 (load (concat user-coding-settings-path "lang-emacs-lisp.el"))
