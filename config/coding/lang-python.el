@@ -54,4 +54,4 @@
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:setup-keys t
         jedi:complete-on-dot t
-        jedi:tooltip-method '(pos-tip popup)))
+        jedi:tooltip-method '(pos-tip popup)))  ; Or nil for eldoc like signatures
