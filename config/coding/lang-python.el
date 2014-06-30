@@ -18,6 +18,7 @@
                   indent-tabs-mode nil
                   comment-start "# "
                   whitespace-line-column 80)
+            (highlight-indentation-mode 0)
             (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;; ________________________________________________________________________
@@ -46,6 +47,15 @@
     (rename-buffer new-buffer-name t)))
 
 (add-hook 'python-mode-hook (function python-rename-buffer))
+
+;; _____________________________________________________________________________
+;;                                                                          Elpy
+
+(when use-elpy
+  (require 'elpy)
+  (elpy-enable)
+  (elpy-clean-modeline)
+  (setq elpy-rpc-backend "jedi"))
 
 ;; _____________________________________________________________________________
 ;;                                                                          Jedi

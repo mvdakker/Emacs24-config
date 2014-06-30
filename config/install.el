@@ -3,6 +3,7 @@
 
 (setq use-auto-complete t
       use-color-theme t
+      use-elpy t
       use-ido t
       use-hippie-expand t
       use-ibuffer t
@@ -21,6 +22,7 @@
                               color-theme
                               color-theme-solarized
                               deferred
+                              elpy
                               epc
                               ibuffer
                               ibuffer-git
