@@ -89,6 +89,11 @@
   (global-set-key (kbd "M-/") 'ac-start)
   (define-key ac-complete-mode-map (kbd "M-/") 'ac-stop)
   (global-set-key (kbd "C-c /") 'user:ac-auto-start-toggle)
+
+  ;; Use RET as completion key
+  (define-key ac-completing-map "\C-m" nil)
+  (setq ac-use-menu-map t)
+  (define-key ac-menu-map "\C-m" 'ac-complete)
 )
 
 ;; _____________________________________________________________________________
