@@ -27,7 +27,8 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (when use-line-numbering (linum-mode 1))
-            (show-paren-mode 1)))
+            (show-paren-mode 1)
+            (setq ac-auto-start 3)))
 
 ;; ________________________________________________________________________
 ;;                                                     Renaming buffer name
