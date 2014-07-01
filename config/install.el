@@ -5,6 +5,8 @@
       use-color-theme t
       use-elpy t
       use-ido t
+      use-fringe-helper t
+      use-git-gutter-fringe t
       use-hippie-expand t
       use-ibuffer t
       use-jedi t
@@ -24,6 +26,8 @@
                               deferred
                               elpy
                               epc
+                              fringe-helper
+                              git-gutter-fringe+
                               ibuffer
                               ibuffer-git
                               ido
