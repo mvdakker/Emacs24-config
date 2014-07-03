@@ -5,6 +5,7 @@
       use-color-theme t
       use-elpy t
       use-ido t
+      use-flycheck t
       use-fringe-helper t
       use-git-gutter-fringe t
       use-hippie-expand t
@@ -26,6 +27,9 @@
                               deferred
                               elpy
                               epc
+                              flycheck
+                              flycheck-pyflakes
+                              flycheck-pos-tip
                               fringe-helper
                               git-gutter-fringe+
                               ibuffer

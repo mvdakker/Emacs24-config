@@ -66,3 +66,18 @@
   (setq jedi:setup-keys t
         jedi:complete-on-dot t
         jedi:tooltip-method '(pos-tip popup)))  ; Or nil for eldoc like signatures
+
+(when use-flycheck
+  (require 'flycheck)
+  (require 'flycheck-pyflakes)
+  (require 'flycheck-pos-tip)
+
+  (eval-after-load 'flycheck
+  '(custom-set-variables
+   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+
+  (add-hook 'python-mode-hook 'flycheck-mode)
+
+  (setq flycheck-select-checker 'python-flake8
+        flycheck-flake8-maximum-line-length 79)
+)
