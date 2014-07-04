@@ -30,6 +30,7 @@
                               flycheck
                               flycheck-pyflakes
                               flycheck-pos-tip
+                              flycheck-color-mode-line
                               fringe-helper
                               git-gutter-fringe+
                               ibuffer

@@ -97,6 +97,15 @@
 )
 
 ;; _____________________________________________________________________________
+;;                                                                      Flycheck
+
+(when use-flycheck
+  (require 'flycheck)
+  (require 'flycheck-color-mode-line)
+  (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+)
+
+;; _____________________________________________________________________________
 ;;                                                                     Languages
 
 (load (concat user-coding-settings-path "lang-emacs-lisp.el"))
