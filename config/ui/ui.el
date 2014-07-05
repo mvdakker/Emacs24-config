@@ -9,8 +9,12 @@
 ;; Replace yes/no dialog input by y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Disable splash/startup screen
-(setq inhibit-startup-screen t)
+;; Disable blinking cursor
+(blink-cursor-mode -1)
+
+(setq inhibit-startup-screen t  ;; Disable splash/startup screen
+      visible-bell t            ;; Disable audio bell
+)
 
 ;; _____________________________________________________________________________
 ;;                                                                     Mode-line
@@ -27,6 +31,7 @@
       display-time-day-and-date
 )
 (display-time-mode t)
+
 
 ;; _________________________________________________________________________
 ;;                                                                 Powerline
