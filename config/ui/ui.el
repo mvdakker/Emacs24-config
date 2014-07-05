@@ -55,3 +55,8 @@
     (global-set-key [(S-f5)] 'color-theme-solarized-light)
   )
 )
+
+;; _____________________________________________________________________________
+;;                                                                          Font
+
+(set-face-attribute 'default nil :family "Dejavu Sans Mono" :height 100)
