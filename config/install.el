@@ -14,7 +14,8 @@
       use-line-numbering t
       use-magit t
       use-powerline nil
-      use-solarized-theme t)
+      use-solarized-theme t
+      use-undo-tree)
 
 ;; _____________________________________________________________________________
 ;;                                                              Package settings
@@ -40,7 +41,8 @@
                               linum
                               magit
                               powerline
-                              python-environment))
+                              python-environment
+                              undo-tree))
 
 ;; List of package repositories
 (setq package-archives `(("elpa" . "http://elpa.gnu.org/packages/")

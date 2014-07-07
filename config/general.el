@@ -68,6 +68,16 @@
   (global-set-key (kbd "C-/") 'hippie-expand)
 )
 
+;; _____________________________________________________________________________
+;;                                                                          Undo
+
+(when use-undo-tree
+  (require 'undo-tree)
+  (setq undo-tree-visualizer-diff t)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/tmp/undo")))
+  (setq undo-tree-visualizer-timestamps t)
+  (global-undo-tree-mode)
+)
 
 ;; _____________________________________________________________________________
 ;;                                                                    Whitespace
