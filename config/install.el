@@ -3,11 +3,12 @@
 
 (setq use-auto-complete t
       use-color-theme t
+      use-diff-hl t
       use-elpy t
       use-ido t
       use-flycheck t
       use-fringe-helper t
-      use-git-gutter-fringe t
+      use-git-gutter-fringe 0
       use-hippie-expand t
       use-ibuffer t
       use-jedi t
@@ -26,6 +27,7 @@
                               color-theme
                               color-theme-solarized
                               deferred
+                              diff-hl
                               elpy
                               epc
                               flycheck

@@ -79,3 +79,10 @@
   (global-set-key (kbd "C-x g h c") 'git-gutter+-commit)
   (global-set-key (kbd "C-x g h v") 'git-gutter+-show-hunk)
   )
+
+(when use-diff-hl
+  (require 'diff-hl)
+  (global-diff-hl-mode)
+  (add-hook 'magit-refresh-file-buffer-hook 'diff-hl-update)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+)
