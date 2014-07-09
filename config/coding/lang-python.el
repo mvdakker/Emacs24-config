@@ -62,10 +62,16 @@
 ;;                                                                          Jedi
 
 (when use-jedi
+  (require 'direx)
+
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:setup-keys t
         jedi:complete-on-dot t
-        jedi:tooltip-method '(pos-tip popup)))  ; Or nil for eldoc like signatures
+        jedi:tooltip-method '(pos-tip popup)) ; Or nil for eldoc like signatures
+
+  (eval-after-load "python" '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+  (add-hook 'jedi-mode-hook 'jedi-direx:setup)
+)
 
 (when use-flycheck
   (require 'flycheck)
@@ -73,8 +79,8 @@
   (require 'flycheck-pos-tip)
 
   (eval-after-load 'flycheck
-  '(custom-set-variables
-   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+    '(custom-set-variables
+      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
   (add-hook 'python-mode-hook 'flycheck-mode)
 

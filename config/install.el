@@ -38,6 +38,7 @@
                               ibuffer-git
                               ido
                               jedi
+                              jedi-direx
                               linum
                               magit
                               powerline
