@@ -55,7 +55,6 @@
 (when use-elpy
   (require 'elpy)
   (elpy-enable)
-  (elpy-clean-modeline)
   (setq elpy-rpc-backend "jedi"))
 
 ;; _____________________________________________________________________________
