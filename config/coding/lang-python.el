@@ -55,22 +55,39 @@
 (when use-elpy
   (require 'elpy)
   (elpy-enable)
-  (setq elpy-rpc-backend "jedi"))
+
+  ;; ________________________________________________________________________
+  ;;                                                                     Jedi
+
+  (when use-jedi
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (setq elpy-rpc-backend "jedi")
+
+    (setq jedi:setup-keys t
+          jedi:complete-on-dot t
+          jedi:tooltip-method '(pos-tip popup)) ; Or nil for eldoc like signatures
+
+
+    (require 'direx)
+    (eval-after-load "python" '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+    (add-hook 'jedi-mode-hook 'jedi-direx:setup)
+
+    (add-hook 'jedi-mode-hook
+              (lambda ()
+                ((local-set-key (kbd "C-<up>") 'backward-paragraph)
+                 (local-set-key (kbd "C-<down>") 'forward-paragraph)
+                 (local-set-key (kbd "C-<right>") 'right-word)
+                 (local-set-key (kbd "C-<left>") 'left-word)
+                 (local-set-key (kbd "C-S-<up>") 'elpy-nav-previous-iblock)
+                 (local-set-key (kbd "C-S-<down>") 'elpy-nav-next-iblock)
+                 (local-set-key (kbd "C-S-<left>") 'elpy-nav-backward-iblock)
+                 (local-set-key (kbd "C-S-<right>") 'elpy-nav-forward-iblock)
+                 )))
+    )
+)
 
 ;; _____________________________________________________________________________
-;;                                                                          Jedi
-
-(when use-jedi
-  (require 'direx)
-
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:setup-keys t
-        jedi:complete-on-dot t
-        jedi:tooltip-method '(pos-tip popup)) ; Or nil for eldoc like signatures
-
-  (eval-after-load "python" '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
-  (add-hook 'jedi-mode-hook 'jedi-direx:setup)
-)
+;;                                                                      Flycheck
 
 (when use-flycheck
   (require 'flycheck)
