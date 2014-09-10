@@ -24,6 +24,11 @@
   (setq user-verbose nil)
 )
 
+;; Set default documents path
+(unless (boundp 'user-documents-path)
+  (setq user-documents-path "~/")
+)
+
 ;; _____________________________________________________________________________
 ;;                                                          Package installation
 
@@ -36,6 +41,7 @@
       user-general-settings-path user-settings-path
       user-coding-settings-path (concat user-settings-path "coding/")
       user-ui-settings-path (concat user-settings-path "ui/")
+      user-org-settings-path (concat user-settings-path "org/")
 )
 
 ;; ________________________________________________________________________
@@ -52,3 +58,8 @@
 ;;                                                              UI settings
 
 (load (concat user-ui-settings-path "ui.el"))
+
+;; ________________________________________________________________________
+;;                                                       Organizer settings
+
+(load (concat user-org-settings-path "org-mode.el"))
