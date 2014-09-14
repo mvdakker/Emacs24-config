@@ -77,6 +77,13 @@
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" beg end))
 
+;; ________________________________________________________________________
+;;                                                            Expand region
+
+(when use-expand-region
+  (global-set-key (kbd "C-=") 'er/expand-region)
+)
+
 ;; _____________________________________________________________________________
 ;;                                                                Line numbering
 

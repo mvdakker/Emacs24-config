@@ -5,6 +5,7 @@
       use-color-theme t
       use-diff-hl t
       use-elpy t
+      use-expand-region t
       use-ido t
       use-flycheck t
       use-fringe-helper t
@@ -30,6 +31,7 @@
                               diff-hl
                               elpy
                               epc
+                              expand-region
                               flycheck
                               flycheck-pyflakes
                               flycheck-pos-tip
