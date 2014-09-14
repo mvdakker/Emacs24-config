@@ -49,6 +49,15 @@
 
 (add-hook 'python-mode-hook (function python-rename-buffer))
 
+;; ________________________________________________________________________
+;;                                         Highlight special label keywords
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (font-lock-add-keywords nil '(("\\<\\(TODO\\|FIXME\\|BUG\\|TEST\\):" 1 font-lock-warning-face t)
+                                          ("\\<\\(DEBUG\\)\\>" 1 font-lock-warning-face t)))
+))
+
 ;; _____________________________________________________________________________
 ;;                                                                          Elpy
 
