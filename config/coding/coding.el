@@ -7,6 +7,47 @@
 ;;                                                               Version control
 
 ;; ________________________________________________________________________
+;;                                                                    Magit
+
+;; ___________________________________________________________________
+;;                                                            Settings
+
+(when use-magit
+  (setq magit-completing-read-function (quote magit-ido-completing-read)
+        magit-log-auto-more t
+        magit-process-popup-time 2
+        magit-sha1-abbrev-length 8
+        magit-diff-refine-hunk (quote all)
+  )
+)
+
+;; ___________________________________________________________________
+;;                                                        Key bindings
+
+(when use-magit
+  ;; Old key bindings
+  (global-set-key [(f8)] 'magit-status)   ;; Display magit status
+  (global-set-key [(C-f8)] 'magit-log)    ;; Display magit log
+  (global-set-key [(C-S-f8)] 'magit-blame-mode)
+
+  ;; New key bindings
+  (global-set-key (kbd "C-x g s") 'magit-status)
+  (global-set-key (kbd "C-x g l") 'magit-log)
+  (global-set-key (kbd "C-x g b") 'magit-blame-mode)
+)
+
+;; ___________________________________________________________________
+;;                                                       Font settings
+
+(when use-magit
+  (set-face-foreground 'magit-diff-add "dark green")
+  (set-face-background 'magit-diff-add "white")
+  (set-face-foreground 'magit-diff-del "dark red")
+  (set-face-background 'magit-diff-del "white")
+  (set-face-background 'magit-item-highlight "light gray")
+)
+
+;; ________________________________________________________________________
 ;;                                                                  Merging
 
 (defun check-smerge ()
@@ -20,7 +61,6 @@
 
 ;; ___________________________________________________________________
 ;;                                                               Ediff
-
 
 (setq ediff-split-window-function 'split-window-horizontally
       ediff-merge-split-window-function 'split-window-vertically
