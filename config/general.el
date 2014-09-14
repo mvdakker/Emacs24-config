@@ -26,7 +26,7 @@
 (when use-ido
   (require 'ido)
 
-  (setq ido-ignore-buffers '("\\'"
+  (setq ido-ignore-buffers '("\\` "
                              "^\*Mess"
                              "^\*Back"
                              "^\*Completion"
