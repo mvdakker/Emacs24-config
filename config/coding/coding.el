@@ -4,6 +4,21 @@
 
 
 ;; _____________________________________________________________________________
+;;                                                               Version control
+
+;; ________________________________________________________________________
+;;                                                                  Merging
+
+(defun check-smerge ()
+  (save-excursion
+    (goto-char (point-min))
+    (when (re-search-forward "^<<<<<<< " nil t)
+      (smerge-mode 1))))
+
+(add-hook 'find-file-hook 'check-smerge t)
+(setq smerge-command-prefix (kbd "C-c ]"))
+
+;; _____________________________________________________________________________
 ;;                                                             Match parenthesis
 
 (show-paren-mode t)
