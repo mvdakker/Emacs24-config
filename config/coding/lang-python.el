@@ -70,12 +70,13 @@
 
   (when use-jedi
     (add-hook 'python-mode-hook 'jedi:setup)
-    (setq elpy-rpc-backend "jedi")
+    (setq elpy-rpc-backend "jedi"
+          elpy-rpc--timeout 5
+          ac-auto-start 3)
 
     (setq jedi:setup-keys t
           jedi:complete-on-dot t
           jedi:tooltip-method '(pos-tip popup)) ; Or nil for eldoc like signatures
-
 
     (require 'direx)
     (eval-after-load "python" '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
