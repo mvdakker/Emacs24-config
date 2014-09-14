@@ -18,8 +18,14 @@
                   indent-tabs-mode nil
                   comment-start "# "
                   whitespace-line-column 80)
-            (highlight-indentation-mode 0)
-            (local-set-key (kbd "RET") 'newline-and-indent)))
+            (highlight-indentation-mode 0)))
+
+(defun set-newline-and-indent ()
+  "Map the return key with newline-and-indent"
+  (interactive)
+  (local-set-key (kbd "RET") 'newline-and-indent))
+
+(add-hook 'python-mode-hook 'set-newline-and-indent)
 
 ;; ________________________________________________________________________
 ;;                                                            Misc settings
