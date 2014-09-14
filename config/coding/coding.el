@@ -18,6 +18,17 @@
 (add-hook 'find-file-hook 'check-smerge t)
 (setq smerge-command-prefix (kbd "C-c ]"))
 
+;; ___________________________________________________________________
+;;                                                               Ediff
+
+
+(setq ediff-split-window-function 'split-window-horizontally
+      ediff-merge-split-window-function 'split-window-vertically
+      ediff-use-long-help-message t
+)
+
+(global-set-key (kbd "C-x v e") 'ediff-revision)
+
 ;; _____________________________________________________________________________
 ;;                                                             Match parenthesis
 
