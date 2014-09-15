@@ -161,8 +161,8 @@
   (setq ac-ignore-case t                ; Ignore case sensitivity
         ac-delay 0.25                   ; Delay time (s) before completion is shown
         ac-auto-start nil               ; Never automatically start
-        ac-auto-show-menu               ; Delay time (s) before completion menu is shown
-        ac-quick-help-delay             ; Delay time (s) before help is shown
+        ac-auto-show-menu 1              ; Delay time (s) before completion menu is shown
+        ac-quick-help-delay 1            ; Delay time (s) before help is shown
         ac-dwim t                       ; Do What I Mean
         )
 
