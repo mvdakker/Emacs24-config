@@ -54,32 +54,6 @@
       ediff-use-long-help-message t
 )
 
-;; ________________________________________________________________________
-;;                                                               Git-gutter
-
-(when (and use-fringe-helper use-git-gutter-fringe)
-  (require 'fringe-helper)
-  (require 'git-gutter+)
-  (require 'git-gutter-fringe+)
-
-  (set-face-foreground 'git-gutter-fr+-modified "yellow")
-  (set-face-foreground 'git-gutter-fr+-added    "green")
-  (set-face-foreground 'git-gutter-fr+-deleted  "red")
-
-  (setq-default left-fringe-width 10
-                right-fringe-width 10)
-
-  (setq git-gutter-fr+-side 'right-fringe)
-
-  (global-set-key (kbd "C-x g H") 'git-gutter+-mode)
-  (global-set-key (kbd "C-x g h p") 'git-gutter+-previous-hunk)
-  (global-set-key (kbd "C-x g h n") 'git-gutter+-next-hunk)
-  (global-set-key (kbd "C-x g h r") 'git-gutter+-revert-hunk)
-  (global-set-key (kbd "C-x g h s") 'git-gutter+-stage-hunks)
-  (global-set-key (kbd "C-x g h c") 'git-gutter+-commit)
-  (global-set-key (kbd "C-x g h v") 'git-gutter+-show-hunk)
-  )
-
 (when use-diff-hl
   (require 'diff-hl)
   (global-diff-hl-mode)

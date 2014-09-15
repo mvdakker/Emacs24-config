@@ -9,7 +9,6 @@
       use-ido t
       use-flycheck t
       use-fringe-helper t
-      use-git-gutter-fringe 0
       use-hippie-expand t
       use-ibuffer t
       use-jedi t
@@ -38,7 +37,6 @@
                               flycheck-pos-tip
                               flycheck-color-mode-line
                               fringe-helper
-                              git-gutter-fringe+
                               ibuffer
                               ibuffer-git
                               ido
