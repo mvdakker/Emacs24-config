@@ -67,7 +67,11 @@
           (lambda ()
             (when use-line-numbering (linum-mode 1))
             (show-paren-mode 1)
-            (setq ac-auto-start 3)))
+            (setq ac-auto-start 3
+                  ac-auto-show-menu 1
+                  ac-quick-help-delay 1)
+            (when use-yasnippet (yas/minor-mode-on))
+            ))
 
 ;; ________________________________________________________________________
 ;;                                                     Renaming buffer name

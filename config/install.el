@@ -17,7 +17,8 @@
       use-magit t
       use-powerline nil
       use-solarized-theme t
-      use-undo-tree)
+      use-undo-tree nil
+      use-yasnippet t)
 
 ;; _____________________________________________________________________________
 ;;                                                              Package settings
