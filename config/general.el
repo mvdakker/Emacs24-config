@@ -68,6 +68,14 @@
   (global-set-key (kbd "C-/") 'hippie-expand)
 )
 
+
+;; _____________________________________________________________________________
+;;                                                                          Helm
+
+(when use-helm
+  (setq helm-buffers-fuzzy-matching t ; fuzzy matching buffer names when non--nil
+)
+
 ;; _____________________________________________________________________________
 ;;                                                                          Undo
 
