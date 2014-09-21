@@ -105,16 +105,11 @@
 ;;                                                                      Flycheck
 
 (when use-flycheck
-  (require 'flycheck)
-  (require 'flycheck-pyflakes)
-  (require 'flycheck-pos-tip)
-
-  (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq flycheck-select-checker 'python-flake8
+                    flycheck-flake8-maximum-line-length 79)
+              ))
 
   (add-hook 'python-mode-hook 'flycheck-mode)
-
-  (setq flycheck-select-checker 'python-flake8
-        flycheck-flake8-maximum-line-length 79)
 )
