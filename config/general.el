@@ -73,7 +73,9 @@
 ;;                                                                          Helm
 
 (when use-helm
-  (setq helm-buffers-fuzzy-matching t ; fuzzy matching buffer names when non--nil
+  (setq helm-buffers-fuzzy-matching t) ; fuzzy matching buffer names when non--nil
+
+  (global-set-key (kbd "C-c C-h o") 'helm-occur)
 )
 
 ;; _____________________________________________________________________________
