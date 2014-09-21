@@ -195,6 +195,16 @@
 )
 
 ;; _____________________________________________________________________________
+;;                                                                    Projectile
+
+(when use-projectile
+  (projectile-global-mode)
+
+  (setq projectile-enable-caching t
+        projectile-globally-ignored-files '(".projectile" "TAGS"))
+)
+
+;; _____________________________________________________________________________
 ;;                                                                     Languages
 
 (load (concat user-coding-settings-path "lang-emacs-lisp.el"))

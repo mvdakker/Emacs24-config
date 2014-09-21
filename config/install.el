@@ -9,12 +9,14 @@
       use-ido t
       use-flycheck t
       use-fringe-helper t
+      use-helm t
       use-hippie-expand t
       use-ibuffer t
       use-jedi t
       use-line-numbering t
       use-magit t
       use-powerline nil
+      use-projectile t
       use-solarized-theme t
       use-undo-tree nil
       use-yasnippet t)
@@ -32,6 +34,10 @@
                               elpy
                               epc
                               expand-region
+                              helm
+                              helm-flycheck
+                              helm-projectile
+                              helm-pydoc
                               flycheck
                               flycheck-pyflakes
                               flycheck-pos-tip
@@ -45,6 +51,7 @@
                               linum
                               magit
                               powerline
+                              projectile
                               python-environment
                               undo-tree))
 
