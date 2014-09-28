@@ -4,6 +4,7 @@
 (setq use-auto-complete t
       use-color-theme t
       use-diff-hl t
+      use-ecb t
       use-elpy t
       use-expand-region t
       use-ido t
@@ -31,6 +32,7 @@
                               color-theme-solarized
                               deferred
                               diff-hl
+                              ecb
                               elpy
                               epc
                               expand-region

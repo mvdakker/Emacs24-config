@@ -186,6 +186,23 @@
 )
 
 ;; _____________________________________________________________________________
+;;                                                            Emacs Code Browser
+
+(when use-ecb
+  (setq ecb-examples-bufferinfo-buffer-name nil
+        ecb-tip-of-the-day nil)
+
+  ;; ______________________________________________________________________
+  ;;                                                               Semantic
+  (semantic-mode 1)
+
+  ;; ______________________________________________________________________
+  ;;                                                           Key bindings
+  (global-set-key (kbd "C-c e") 'ecb-minor-mode)
+)
+
+
+;; _____________________________________________________________________________
 ;;                                                                      Flycheck
 
 (when use-flycheck
