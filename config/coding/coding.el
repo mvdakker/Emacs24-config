@@ -310,8 +310,14 @@
 (when use-projectile
   (projectile-global-mode)
 
-  (setq projectile-enable-caching t
+  (setq projectile-completion-system 'ido
         projectile-globally-ignored-files '(".projectile" "TAGS"))
+
+  (if (equal window-system 'w32)
+    (setq projectile-enable-caching t
+      projectile-indexing-method 'native)
+    (setq projectile-enable-caching nil
+      projectile-indexing-method 'alien))
 )
 
 ;; _____________________________________________________________________________
