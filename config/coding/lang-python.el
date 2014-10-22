@@ -28,10 +28,29 @@
 
     (setq jedi:setup-keys t
           jedi:complete-on-dot t
+          jedi:get-in-function-call-delay 200
           jedi:tooltip-method '(pos-tip popup)) ; Or nil for eldoc like signatures
 
     (require 'direx)
     (eval-after-load "python" '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+
+    (defvar jedi:goto-stack '())
+
+    (defun jedi:jump-to-definition ()
+      "Jump to the definition of related item at which the cursor is."
+      (interactive)
+      (add-to-list 'jedi:goto-stack
+                   (list (buffer-name) (point)))
+      (jedi:goto-definition))
+
+    (defun jedi:jump-back ()
+      "Jump back to previous jump point"
+      (interactive)
+      (let ((p (pop jedi:goto-stack)))
+        (if p (progn
+                (switch-to-buffer (nth 0 p))
+                (goto-char (nth 1 p))))))
+
     (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
     (add-hook 'jedi-mode-hook
@@ -44,7 +63,12 @@
                  (local-set-key (kbd "C-S-<down>") 'elpy-nav-next-iblock)
                  (local-set-key (kbd "C-S-<left>") 'elpy-nav-backward-iblock)
                  (local-set-key (kbd "C-S-<right>") 'elpy-nav-forward-iblock)
-                 )))
+                 (local-set-key (kbd "C-c s") 'elpy-rgrep-symbol)
+                 (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
+                 (local-set-key (kbd "C-,") 'jedi:jump-back)
+                 (local-set-key (kbd "C-c d") 'jedi:show-doc)
+                 (local-set-key (kbd "C-<tab>") 'jedi:complete)))
+                 )
     )
 )
 
