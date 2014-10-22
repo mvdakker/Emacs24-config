@@ -164,6 +164,7 @@
         ac-auto-show-menu 1              ; Delay time (s) before completion menu is shown
         ac-quick-help-delay 1            ; Delay time (s) before help is shown
         ac-dwim t                       ; Do What I Mean
+        ac-max-width 0.5
         )
 
   ;; Toggle auto-complete
