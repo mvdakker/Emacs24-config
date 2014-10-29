@@ -47,12 +47,15 @@
 (when use-color-theme
   (require 'color-theme)
 
+  (define-prefix-command 'ui-key-map)
+  (global-set-key  (kbd "C-u") 'ui-key-map)
+
   (when use-solarized-theme
     (require 'color-theme-solarized)
     (load-theme 'solarized-dark t)
 
-    (global-set-key [(f5)] 'color-theme-solarized-dark)
-    (global-set-key [(S-f5)] 'color-theme-solarized-light)
+    (define-key 'ui-key-map (kbd "c d") 'color-theme-solarized-dark)
+    (define-key 'ui-key-map (kbd "c l") 'color-theme-solarized-light)
   )
 )
 
